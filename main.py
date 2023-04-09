@@ -1,16 +1,17 @@
 import pygame as pg
 import sys
 from settings import *
-
+from map import *
 
 class Game:
     def __init__(self):
         pg.init()  #инициализация игровых модулей
         self.screen = pg.display.set_mode(RES) #экран для рендеринга
         self.clock = pg.time.Clock()  # создаем экземпляр класса часов
+        self.new_game()
 
     def new_game (self):
-        pass
+        self.map = Map(self)
 
     def update(self):
         pg.display.flip() #отображаем экран
@@ -19,6 +20,7 @@ class Game:
 
     def draw(self):
         self.screen.fill('black') #на каждой итерации окрашиваем экран в черный цвет
+        self.map.draw()
 
     def check_events(self):
         """Если из игры вышли или нажали Escape, то мягко выйти из игры"""
