@@ -28,8 +28,8 @@ class Game:
 
     def draw(self):
         self.screen.fill('black') #на каждой итерации окрашиваем экран в черный цвет
-        self.map.draw()
-        self.player.draw()
+#        self.map.draw()
+#        self.player.draw()
 
     def check_events(self):
         """Если из игры вышли или нажали Escape, то мягко выйти из игры"""
