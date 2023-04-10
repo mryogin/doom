@@ -3,22 +3,25 @@ import sys
 from settings import *
 from map import *
 from player import *
+from raycasting import *
 
 class Game:
     def __init__(self):
         pg.init()  #инициализация игровых модулей
         self.screen = pg.display.set_mode(RES) #экран для рендеринга
         self.clock = pg.time.Clock()  # создаем экземпляр класса часов
-        self.delta_time = 1 #получаем дельту времени
+        self.delta_time = 1 #получаем дельту времени чтобы персонаж двигался плавно независимо от ФПС
         self.new_game()
 
     def new_game (self):
         self.map = Map(self)
         self.player = Player(self)
+        self.raycasting = RayCasting(self)
 
 
     def update(self):
         self.player.update()
+        self.raycasting.update()
         pg.display.flip() #отображаем экран
         self.delta_time = self.clock.tick(FPS) #получаем дельту времени
         pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
