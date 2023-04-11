@@ -12,6 +12,7 @@ PLAYER_POS = 1.5, 5, #minimap
 PLAYER_ANGLE = 0 #угол направления персонажа
 PLAYER_SPEED = 0.004 #скорость движения
 PLAYER_ROT_SPEED = 0.002 #скорость вращения
+PLAYER_SIZE_SCALE = 60
 
 
 #настройки рэйкастинга:
@@ -24,3 +25,9 @@ MAX_DEPTH = 20
 
 SCREEN_DIST = HALF_WIDTH / math.tan(HALF_FOV)
 SCALE = WIDTH // NUM_RAYS
+
+# настройки текстур
+TEXTURE_SIZE = 256
+HALF_TEXTURE_SIZE = TEXTURE_SIZE // 2
+
+
