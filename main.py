@@ -10,6 +10,7 @@ from object_renderer import *
 class Game:
     def __init__(self):
         pg.init()  #инициализация игровых модулей
+        pg.mouse.set_visible(False)
         self.screen = pg.display.set_mode(RES) #экран для рендеринга
         self.clock = pg.time.Clock()  # создаем экземпляр класса часов
         self.delta_time = 1 #получаем дельту времени чтобы персонаж двигался плавно независимо от ФПС
@@ -30,7 +31,7 @@ class Game:
         pg.display.set_caption(f'{self.clock.get_fps() :.1f}')
 
     def draw(self):
-        self.screen.fill('black') #на каждой итерации окрашиваем экран в черный цвет
+#        self.screen.fill('black') #на каждой итерации окрашиваем экран в черный цвет
         self.object_renderer.draw()
 #        self.map.draw()
 #        self.player.draw()
